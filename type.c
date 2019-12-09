@@ -1,8 +1,10 @@
 #include "type.h"
 
+static const char * PROMPT = "$ ";
+
 void type(const char * text) {
     register short length = strlen(text);
-    printf("%s$ %s", GRN, RESET);
+    printf("%s%s%s", GRN, PROMPT, RESET);
     for (register short i = 0; i < length - 1; i++) {
         putchar(text[i]);
         //cursor();
@@ -12,6 +14,8 @@ void type(const char * text) {
 
 void cursor() {
     printf("█");
+    // keystroke sound
+    // wait 250ms
     putchar('\b');
 }
 
