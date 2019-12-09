@@ -1,6 +1,10 @@
 #include "main.h"
 
 int main(int argc, char ** argv) {
+    if (argc == 1 || strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
+        printHelp();
+        exit(0);
+    };
     FILE * test = readFile(argv[1]);
     char * command;
     for (;;) {
@@ -13,4 +17,9 @@ int main(int argc, char ** argv) {
     }
     free(command);
     return 0;
+}
+
+void printHelp() {
+    printf("Usage: rs [FILE]\n");
+    printf("Run prerecorded shell scripts.\n\n");
 }

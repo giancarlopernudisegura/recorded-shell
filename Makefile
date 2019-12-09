@@ -15,3 +15,9 @@ $(OBJS): %.o: %.c $(HEADERS)
 
 clean:
 	rm -f *.o *.out
+
+install: $(OBJS)
+	sudo $(CC) $^ -o /bin/rs
+
+uninstall:
+	sudo rm -f /bin/rs

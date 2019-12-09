@@ -6,4 +6,6 @@
 #include "type.h"
 #include "file.h"
 
+void printHelp();
+
 #endif
