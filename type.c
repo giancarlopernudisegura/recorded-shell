@@ -2,13 +2,12 @@
 
 void type(const char * text) {
     register short length = strlen(text);
-    printf("%s$ ", GRN);
-    getc(stdin);
-    for (register short i = 0; i < length; i++) {
+    printf("%s$ %s", GRN, RESET);
+    for (register short i = 0; i < length - 1; i++) {
         putchar(text[i]);
-        cursor();
+        //cursor();
     }
-    printf("%s", RESET);
+    getc(stdin);
 }
 
 void cursor() {
