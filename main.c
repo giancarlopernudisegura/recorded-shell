@@ -1,10 +1,16 @@
 #include "main.h"
 
 int main(int argc, char ** argv) {
-    char * command;
-    command = (char *) malloc(sizeof(short));
     FILE * test = readFile(argv[1]);
-    fscanf(test, "%s\n", command);
-    type(command);
+    char * command;
+    for (;;) {
+        command = readLine(test);
+        if (command == NULL) {
+            break;
+        }
+        type(command);
+        system(command);
+    }
+    free(command);
     return 0;
 }

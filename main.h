@@ -2,6 +2,7 @@
 #define _MAIN_H_
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "type.h"
 #include "file.h"
 

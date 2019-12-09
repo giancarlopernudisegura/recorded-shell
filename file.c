@@ -10,3 +10,18 @@ FILE * readFile(const char * filename) {
 
     return f;
 }
+
+char * readLine(FILE * stream) {
+    char * output;
+    output = (char *) malloc(USHRT_MAX);
+    register char currentChar;
+    register short index = 0;
+    do {
+        currentChar = fgetc(stream);
+        if (currentChar == EOF) {
+            return NULL;
+        }
+        output[index++] = currentChar;
+    } while (currentChar != '\n' && index < USHRT_MAX);
+    return output;
+}

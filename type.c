@@ -1,16 +1,20 @@
 #include "type.h"
 
 void type(const char * text) {
-    short length = strlen(text);
+    register short length = strlen(text);
     printf("$ ");
+    getc(stdin);
     for (register short i = 0; i < length; i++) {
         putchar(text[i]);
         cursor();
     }
-    putchar('\n');
 }
 
 void cursor() {
-    putchar('|');
+    printf("█");
     putchar('\b');
+}
+
+void delay(long milliseconds) {
+    for (register unsigned long long i = 0; i < ULLONG_MAX; i++);
 }

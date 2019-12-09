@@ -2,10 +2,12 @@
 #define _TYPE_H_
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+#include <limits.h>
 
 void type(const char * text);
 
 void cursor();
+
+void delay(long milliseconds);
 
 #endif
