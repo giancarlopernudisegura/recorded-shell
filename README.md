@@ -18,5 +18,11 @@ To run the premade shell script, simply provide the textfile as the argument.
 To install run:
 ```
 git clone https://github.com/giancarlopernudisegura/recorded-shell.git
+cd recorded-shell
 make install
 ```
+
+## Features to come:
++ costum prompt
++ simulated typing with speed option
++ simulated keystroke sounds
