@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include <time.h>
+#include <unistd.h>
 #include "color.h"
 
 void type(const char * text);
