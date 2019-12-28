@@ -14,12 +14,10 @@ void type(const char * text) {
 
 void cursor() {
     fflush(stdout);
-    printf("█");
     // keystroke sound
     sound();
     // wait 50ms
     delay(time_delay);
-    printf("\b");
 }
 
 void delay(long milliseconds) {
