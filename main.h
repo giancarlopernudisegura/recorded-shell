@@ -5,6 +5,7 @@
 #include <limits.h>
 #include "type.h"
 #include "file.h"
+#include "config.h"
 
 void printHelp();
 

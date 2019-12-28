@@ -8,27 +8,29 @@ void type(const char * text) {
     for (register short i = 0; i < length - 1; i++) {
         putchar(text[i]);
         cursor();
-        if (i < length - 2) {
-            fflush(stdout);
-        }
     }
     getc(stdin);
 }
 
 void cursor() {
-    long time = 50;
+    fflush(stdout);
     printf("█");
     // keystroke sound
+    sound();
     // wait 50ms
-    delay(time);
+    delay(time_delay);
     printf("\b");
 }
 
 void delay(long milliseconds) {
-    long ms = milliseconds * (CLOCKS_PER_SEC / 1000);
+    register long ms = milliseconds * (CLOCKS_PER_SEC / 1000);
     clock_t start, current;
     current = start = clock();
     while ((current - start) < ms) {
         current = clock();
     }
+}
+
+void sound() {
+    // plays keystroke sound
 }
