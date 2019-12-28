@@ -1,10 +1,10 @@
 #include "type.h"
 
-static const char * PROMPT = "$ ";
+extern char * PROMPT;
 
 void type(const char * text) {
     register short length = strlen(text);
-    printf("%s%s%s", GRN, PROMPT, RESET);
+    printf("%s %s", PROMPT, RESET);
     for (register short i = 0; i < length - 1; i++) {
         putchar(text[i]);
         cursor();
