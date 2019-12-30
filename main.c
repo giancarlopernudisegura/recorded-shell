@@ -21,6 +21,6 @@ int main(int argc, char ** argv) {
 }
 
 void printHelp() {
-    printf("Usage: rs [FILE]\n");
+    printf("Usage: rs <FILE>\n");
     printf("Run prerecorded shell scripts.\n\n");
 }
