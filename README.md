@@ -1,4 +1,4 @@
-# Recorder Shell
+# Recorded Shell
 This tool allows you to run prerecorded shell scripts.
 This is good for presentations where you want to run commands in the shell but do not want to worry about typing.
 
