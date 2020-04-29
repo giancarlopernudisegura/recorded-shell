@@ -13,8 +13,11 @@ int main(int argc, char ** argv) {
         if (command == NULL) {
             break;
         }
-        type(command);
-        system(command);
+        trim(command);
+        if (!isComment(command)) {
+            type(command);
+            system(command);
+        }
     }
     free(command);
     return 0;

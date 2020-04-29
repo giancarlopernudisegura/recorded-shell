@@ -8,4 +8,8 @@ FILE * readFile(const char * filename);
 
 char * readLine(FILE * stream);
 
+void trim(char * str);
+
+_Bool isComment(char * str);
+
 #endif
