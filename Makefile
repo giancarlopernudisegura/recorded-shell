@@ -17,11 +17,16 @@ clean:
 	rm -f *.o *.out
 
 install: $(OBJS)
-	sudo mkdir /opt/recorded-shell
+	@echo "installing..."
+	@make uninstall > /dev/null || :
+	@sudo mkdir -p /opt/recorded-shell
 	sudo $(CC) $^ -o /opt/recorded-shell/rs
 	sudo ln -s /opt/recorded-shell/rs /bin/rs
+	@echo "rs installed!"
 
 uninstall:
-	unlink rs
-	sudo rm -f /bin/rs
-	sudo rm -f /opt/recorded-shell/
+	@echo "uninstalling..."
+	@sudo unlink /usr/bin/rs
+	@sudo rm -f /usr/bin/rs
+	@sudo rm -rf /opt/recorded-shell/
+	@echo "rs uninstalled!"
