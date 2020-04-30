@@ -3,9 +3,9 @@
 extern char * PROMPT;
 
 void type(const char * text) {
-    register short length = strlen(text);
+    register uint16_t length = strlen(text);
     printf("%s %s", PROMPT, RESET);
-    for (register short i = 0; i < length - 1; i++) {
+    for (register uint16_t i = 0; i < length - 1; i++) {
         putchar(text[i]);
         cursor();
     }
@@ -20,8 +20,8 @@ void cursor() {
     delay(time_delay);
 }
 
-void delay(long milliseconds) {
-    register long ms = milliseconds * (CLOCKS_PER_SEC / 1000);
+void delay(uint32_t milliseconds) {
+    register uint32_t ms = milliseconds * (CLOCKS_PER_SEC / 1000);
     clock_t start, current;
     current = start = clock();
     while ((current - start) < ms) {
