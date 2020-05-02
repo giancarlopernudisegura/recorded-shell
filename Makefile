@@ -7,6 +7,14 @@ HEADERS = $(wildcard *.h)
 
 EXECUTABLE = main
 
+OS := $(shell uname)
+INSTALL_LOCATION =
+ifeq ($(OS), Linux)
+	INSTALL_LOCATION = /usr/bin/
+else ifeq ($(OS), Darwin)
+	INSTALL_LOCATION = /usr/local/bin/
+endif
+
 $(EXECUTABLE): $(OBJS)
 	$(CC) $^ -o $@
 
@@ -18,15 +26,15 @@ clean:
 
 install: $(OBJS)
 	@echo "installing..."
-	@make uninstall > /dev/null || :
+	@make uninstall > /dev/null 2>&1 || :
 	@sudo mkdir -p /opt/recorded-shell
 	sudo $(CC) $^ -o /opt/recorded-shell/rs
-	sudo ln -s /opt/recorded-shell/rs /usr/bin/rs
+	sudo ln -s /opt/recorded-shell/rs $(INSTALL_LOCATION)rs
 	@echo "rs installed!"
 
 uninstall:
 	@echo "uninstalling..."
-	@sudo unlink /usr/bin/rs
-	@sudo rm -f /usr/bin/rs
+	@sudo unlink $(INSTALL_LOCATION)rs
+	@sudo rm -f $(INSTALL_LOCATION)rs
 	@sudo rm -rf /opt/recorded-shell/
 	@echo "rs uninstalled!"
