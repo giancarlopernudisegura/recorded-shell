@@ -21,7 +21,7 @@ install: $(OBJS)
 	@make uninstall > /dev/null || :
 	@sudo mkdir -p /opt/recorded-shell
 	sudo $(CC) $^ -o /opt/recorded-shell/rs
-	sudo ln -s /opt/recorded-shell/rs /bin/rs
+	sudo ln -s /opt/recorded-shell/rs /usr/bin/rs
 	@echo "rs installed!"
 
 uninstall:
