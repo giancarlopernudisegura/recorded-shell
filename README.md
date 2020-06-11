@@ -1,11 +1,8 @@
 # Recorded Shell
+![OS Support](https://img.shields.io/badge/platform-linux%20|%20osx-informational)
+
 This tool allows you to run prerecorded shell scripts.
 This is good for presentations where you want to run commands in the shell but do not want to worry about typing.
-
-## Requirements
-+ GNU/Linux
-+ GCC >= 9.2.0
-
 
 ## File structure
 Commands are separated by newline characters.
